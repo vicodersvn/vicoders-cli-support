@@ -1,2 +1,3 @@
 import { Input } from './Input';
-export { Input };
+import { Select } from './Select';
+export { Input, Select };

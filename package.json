@@ -4,6 +4,7 @@
   "description": "Vicoders CLI Support Module",
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json && rm -rf ../node_modules/@vicoders/cli-support/dist && cp -R dist ../node_modules/@vicoders/cli-support",
     "test": "npm run build && jasmine src/**/*_spec.js",
     "publish_module_only": "npm run build && npm publish --access public"
   },
@@ -16,9 +17,10 @@
   "typings": "dist/index.d.ts",
   "author": "Hieupv <hieupv@codersvn.com>",
   "dependencies": {
-    "@angular-devkit/core": "^8.3.24",
-    "@angular-devkit/schematics": "^8.3.24",
-    "@schematics/angular": "^8.3.24",
+    "@angular-devkit/core": "^9.0.2",
+    "@angular-devkit/schematics": "^9.0.2",
+    "@schematics/angular": "^9.0.2",
+    "@types/colors": "^1.2.1",
     "@types/decompress": "^4.2.3",
     "@types/inquirer": "^6.5.0",
     "@types/jasmine": "^3.3.9",
@@ -26,6 +28,7 @@
     "@types/pluralize": "^0.0.29",
     "@types/shelljs": "^0.8.6",
     "@vicoders/console": "^2.0.0",
+    "colors": "^1.4.0",
     "decompress": "^4.2.0",
     "inquirer": "^7.0.4",
     "jasmine": "^3.3.1",
