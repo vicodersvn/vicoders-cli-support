@@ -16,7 +16,7 @@ const INQUIRER_TYPE = 'input';
  * @param {InputOption} options - Optional params
  */
 
-export function Input(name: string, options: InputOption): Rule {
+export function input(name: string, options: InputOption): Rule {
   const message = options.message ? `${options.message}: ` : `${name}: `;
   const params: any = { type: INQUIRER_TYPE, name: name, message: message };
   if (options.default) {

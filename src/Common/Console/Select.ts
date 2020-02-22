@@ -18,9 +18,8 @@ const INQUIRER_TYPE = 'input';
  * @param {any[]} options - Optional params
  */
 
-export function Select(name: string, values: any[], options?: InputOption): Rule {
+export function select(name: string, values: any[], options?: InputOption): Rule {
   return (host: Tree) => {
-    console.log((host as any).options);
     return new Observable<Tree>(subscriber => {
       let answer;
       options = options || {};
@@ -34,7 +33,6 @@ export function Select(name: string, values: any[], options?: InputOption): Rule
         message += `(${key + 1}) ${item.description} \n`;
       });
 
-      console.log(message);
       inquirer.prompt({ type: 'input', name: name, message: 'Your choice: ', default: 1 }).then(result => {
         if (Number(result[name]) <= values.length) {
           answer = values[Number(result[name]) - 1];
