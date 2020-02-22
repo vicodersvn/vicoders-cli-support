@@ -23,7 +23,7 @@ npm manifest:
     "description": "Vicoders CLI Support Module",
     "scripts": {
       "build": "tsc -p tsconfig.json",
-      "dev": "tsc -p tsconfig.json && rm -rf ../node_modules/@vicoders/cli-support/dist && cp -R dist ../node_modules/@vicoders/cli-support",
+      "dev": "tsc -p tsconfig.json && rm -rf ../node_modules/@vicoders/cli-support/dist && cp -R dist ../node_modules/@vicoders/cli-support && rm -rf ../vicoders-cli-handler-example/node_modules/@vicoders/cli-support/dist && cp -R dist ../node_modules/vicoders-cli-handler-example/@vicoders/cli-support",
       "publish_module": "npx @codersvn/npm-auto-version && npm run build && npm publish --access public",
       "publish_module_only": "npm run build && npm publish --access public"
     },

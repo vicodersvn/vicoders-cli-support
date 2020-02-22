@@ -13,7 +13,7 @@ interface Options {
  * @param {Options} options - Optional params
  */
 
-export function exec(command: string, options: Options): Rule {
+export function exec(command: string, options?: Options): Rule {
   const [executable, ...args] = command.split(' ');
   console.log({ options, executable, args });
   return (host: Tree) => {
