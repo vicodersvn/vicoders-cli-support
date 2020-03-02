@@ -13,6 +13,7 @@ interface Options {
 /**
  * Download resource
  * @param {string} url - Resource URL
+ * @param {string} destination - Destination
  * @param {Options} options - Optional params
  */
 
