@@ -1,2 +1,4 @@
 import { download } from './download';
-export { download };
+import { sleep } from './sleep';
+import { decompress } from './decompress';
+export { download, sleep, decompress };

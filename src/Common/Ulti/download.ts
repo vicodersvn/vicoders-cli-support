@@ -27,6 +27,7 @@ export function download(url: string, destination: string, _options?: Options): 
       }
 
       const spinner: any = ora('Downloading...').start();
+      const start_time = new Date();
       axios(params).then(response => {
         response.data.pipe(fs.createWriteStream(destination));
         const len = Number(response.data.headers['content-length']);
@@ -45,11 +46,20 @@ export function download(url: string, destination: string, _options?: Options): 
         });
 
         response.data.on('end', () => {
+          const end_time = new Date();
           if (process !== undefined && process.stdout !== undefined) {
             spinner.stop();
           }
-          subscriber.next(host);
-          subscriber.complete();
+          if (end_time.getTime() > start_time.getTime()) {
+            const total_time = end_time.getTime() - start_time.getTime();
+            setTimeout(() => {
+              subscriber.next(host);
+              subscriber.complete();
+            }, Math.round(total_time * 0.2));
+          } else {
+            subscriber.next(host);
+            subscriber.complete();
+          }
         });
 
         response.data.on('error', () => {
