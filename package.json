@@ -29,7 +29,7 @@
     "@types/pluralize": "^0.0.29",
     "@types/shelljs": "^0.8.6",
     "@vicoders/console": "^2.0.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "colors": "^1.4.0",
     "decompress": "^4.2.0",
     "inquirer": "^7.0.4",
